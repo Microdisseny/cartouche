@@ -18,5 +18,6 @@ psql -U postgres -c "CREATE DATABASE $DB_NAME;"
 echo " * Loading schema..."
 
 cat $SCRIPT_PATH/structure.sql | psql -U $DB_USER -d $DB_NAME
+cat $SCRIPT_PATH/insert-oauth-user.sql | psql -U $DB_USER -d $DB_NAME
 
 psql -U postgres -c "SHOW data_directory;"
