@@ -6,8 +6,6 @@
 
 set -e
 
-$SCRIPT_PATH/set-state.sh "INITIALIZE"
-
 # We're gonna cheat a bit here because we don't want to share the build
 # context between the rails and postgis container paths.
 BASE_URL="https://raw.githubusercontent.com"
@@ -22,5 +20,3 @@ echo " * Loading schema..."
 cat $SCRIPT_PATH/structure.sql | psql -U $DB_USER -d $DB_NAME
 
 psql -U postgres -c "SHOW data_directory;"
-
-$SCRIPT_PATH/set-state.sh "READY"
