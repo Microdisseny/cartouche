@@ -11,10 +11,10 @@ RUN apt-get update --fix-missing -qq && \
 RUN apt-get update --fix-missing -qq && \
     apt-get install -y \
     	wget \
-    	nmap \
     	oracle-java8-installer \
     	golang \
-		git
+		git \
+		postgresql-client-9.5
 
 ENV SRC_PATH /usr/local/src
 RUN mkdir -p $SRC_PATH

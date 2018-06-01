@@ -11,6 +11,7 @@ services:
       - RAILS_ENV=development
     volumes:
       - "./volumes/nginx-static:/www/data"
+      - "./scripts/shared:/usr/local/scripts/shared"
   cgimap:
     build: ./containers/cgimap
     links:
@@ -24,6 +25,7 @@ services:
       - POLL_TIMER=15
     volumes:
       - "./volumes/nginx-static:/www/data"
+      - "./scripts/shared:/usr/local/scripts/shared"
   postgis:
     build: ./containers/postgis
     ports:
@@ -58,3 +60,4 @@ services:
     volumes:
       - "./volumes/nginx-static:/usr/local/data/htdocs"
       - "./volumes/status:/usr/local/data/status"
+      - "./scripts/shared:/usr/local/scripts/shared"
