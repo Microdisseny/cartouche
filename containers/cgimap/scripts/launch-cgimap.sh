@@ -7,4 +7,9 @@
 # CGIMAP_RATELIMIT and CGIMAP_MAXDEBT.
 ##
 
+export CGIMAP_HOST=$DB_HOST
+export CGIMAP_DBNAME=$DB_NAME
+export CGIMAP_USERNAME=$DB_USER
+export CGIMAP_PASSWORD=$DB_PASS
+
 /usr/local/bin/openstreetmap-cgimap --port=3001 --instances=30

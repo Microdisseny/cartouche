@@ -16,10 +16,10 @@ services:
     links:
       - "postgis"
     environment:
-      - CGIMAP_HOST=postgis
-      - CGIMAP_DBNAME=development
-      - CGIMAP_PASSWORD=insecurelocalpassword
-      - CGIMAP_USERNAME=postgres
+      - DB_PASS=insecurelocalpassword
+      - DB_HOST=postgis
+      - DB_USER=postgres
+      - DB_NAME=development
       - POLL_ATTEMPTS=25
       - POLL_TIMER=15
     volumes:
