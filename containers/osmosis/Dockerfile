@@ -36,12 +36,18 @@ RUN go get github.com/mapbox/planet-stream
 
 ENV SCRIPT_PATH /usr/local/scripts
 
+# Add only the files we need to patch and rebuild Osmosis so we don't end up
+# having to rebuild this step every time any script in the scripts directory
+# is changed.
+RUN mkdir -p $OSMOSIS_PATH
+ADD ./scripts/osmosis_ApidbWriter_patch.diff $SCRIPT_PATH/
+ADD ./scripts/patch-osmosis.sh $SCRIPT_PATH/
+RUN chmod +x $SCRIPT_PATH/patch-osmosis.sh
+RUN $SCRIPT_PATH/patch-osmosis.sh
+
 ADD scripts/ $SCRIPT_PATH
 WORKDIR $SCRIPT_PATH
 
 RUN chmod +x $SCRIPT_PATH/*.sh
-
-RUN mkdir -p $OSMOSIS_PATH
-RUN $SCRIPT_PATH/patch-osmosis.sh
 
 ENTRYPOINT $SCRIPT_PATH/docker-entrypoint.sh
