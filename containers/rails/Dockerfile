@@ -28,7 +28,8 @@ RUN apt-get update --fix-missing -qq && \
     	imagemagick \
     	postgresql-client-common \
     	postgresql-client \
-    	libpq-dev
+    	libpq-dev \
+    	curl
 
 
 ENV APP_PATH /usr/local/src
