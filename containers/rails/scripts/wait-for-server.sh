@@ -1,7 +1,7 @@
 # !/bin/bash
 
 # Wait for the Rails server to spin up.
-until $(curl --output /dev/null --silent --fail http://localhost:3000); do
+until $(curl -sf -o /dev/null http://localhost:3000); do
     echo "Waiting for server to start..."
     sleep 5
 done
