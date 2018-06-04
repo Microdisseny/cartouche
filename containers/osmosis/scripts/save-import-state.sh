@@ -13,4 +13,4 @@
 # exists, the import will be resumed from that point automatically.
 ###
 
-echo "$1	$2" > $IMPORT_STAUS_FILE
+echo "$1	$2" > $IMPORT_STATUS_FILE

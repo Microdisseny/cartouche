@@ -16,7 +16,7 @@ mkdir -p /usr/local/data/htdocs
 
 cp $SCRIPT_PATH/templates/import.html /usr/local/data/htdocs/status.html
 
-go run $SCRIPT_PATH/import.go -c=$SCRIPT_PATH/import-pbf.sh -i=$1 -b=${1:-0}
+go run $SCRIPT_PATH/import.go -c=$SCRIPT_PATH/import-pbf.sh -i=$1 -b=${2:-0}
 
 rm /usr/local/data/htdocs/status.html
 rm $IMPORT_STAUS_FILE
