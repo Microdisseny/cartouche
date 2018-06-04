@@ -44,7 +44,7 @@ services:
       - cgimap
       - rails
     ports:
-      - "8000:80"
+      - "3000:80"
     volumes:
       - "./volumes/nginx-static:/www/data"
   osmosis:
