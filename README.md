@@ -42,7 +42,7 @@ Make sure you're in the main directory of this repository (which contains a `doc
 
 ### Navigate to Local Server
 
-Point your browser to [http://localhost:8000](http://localhost:3000).
+Point your browser to [http://localhost:3000](http://localhost:3000).
 
 ### Activating New Users
 
