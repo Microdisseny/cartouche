@@ -67,4 +67,3 @@ These additionally use the following:
 
 * [iD](https://github.com/openstreetmap/iD): A JavaScript editor for OSM data.  Hosted in an iframe and makes calls to cgimap; lives in the `rails` container
 * [osm-auth](https://github.com/osmlab/osm-auth): A pure-client OAuth layer used by iD for authentication; lives in the `rails` container
->>>>>>> c4f698f... README
